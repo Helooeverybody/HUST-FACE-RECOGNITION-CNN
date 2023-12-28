@@ -1,0 +1,100 @@
+Image sources
+    "Alex Lawther"          https://www.themoviedb.org/person/1379277-alex-lawther
+    "Amber Heard"           https://www.foxnews.com/entertainment/johnny-depp-fans-mock-amber-heard
+    "Angelia Jolie"         https://www.imdb.com/name/nm0001401/bio/
+    "Avicii" 	            https://www.youtube.com/channel/UCPHjpfnnGklkRBBTd0k6aHg
+    "Ben Affleck"           https://en.wikipedia.org/wiki/Ben_Affleck
+    "Benzema"	            https://tuoitre.vn/benzema-roi-real-lam-le-chia-tay-ngay-6-6-20230604175657084.htm
+    "Bill Gates"            https://twitter.com/BillGates
+    "Brie Larson"           https://en.wikipedia.org/wiki/Brie_Larson
+    "Calvin Harris"         https://www.pulse87ny.com/2021/08/19/calvin-harris/
+    "Chipu"                 https://vi.wikipedia.org/wiki/Chi_Pu
+    "Chris Evans"           https://www.britannica.com/biography/Chris-Evans-American-actor
+    "Chris Martin"          https://www.biography.com/musicians/chris-martin
+    "Chris Pratt"           https://deadline.com/2022/08/garfield-chris-pratt-release-date-1235084683/
+    "Cillian Murphy"	    https://en.wikipedia.org/wiki/Cillian_Murphy
+    "Claudia Salas"         https://www.imdb.com/name/nm10273610/
+    "Cristiana Ronaldo"     https://www.transfermarkt.com/cristiano-ronaldo/profil/spieler/8198
+    "Dakota Johnson"        https://en.wikipedia.org/wiki/Dakota_Johnson
+    "Dat TaHo"              original
+    "David Beckham"         https://en.wikipedia.org/wiki/David_Beckham
+    "Doug McMillion"        https://en.wikipedia.org/wiki/Doug_McMillon
+    "Drake"		            https://www.forbes.com/profile/drake/?sh=2ea86bf72856
+    "Duy Dat"  		        original
+    "Elizabeth Olsen"	    https://www.rottentomatoes.com/celebrity/elizabeth_olsen
+    "Elle Fanning"	        https://vi.wikipedia.org/wiki/Elle_Fanning	 
+    "Elon Musk"		        https://www.britannica.com/biography/Elon-Musk 
+    "Emilia Clarke"	        https://www.britannica.com/biography/Emilia-Clarke
+    "Emily Blunt"	        https://vi.wikipedia.org/wiki/Emily_Blunt
+    "Gal Gadot"		        https://en.wikipedia.org/wiki/Gal_Gadot
+    "Gordon Ramsey"	        https://www.biography.com/movies-tv/gordon-ramsay
+    "Hanni NewJeans"	    https://tuoitre.vn/ca-si-goc-viet-hanni-newjeans-duoc-tim-kiem-nhieu-nhat-viet-nam-20230207145034537.htm
+    "Henry Cavill"	        https://variety.com/t/henry-cavill/
+    "Ho Ngoc Ha"	        https://tuoitre.vn/ho-ngoc-ha.html
+    "Irene"		            https://www.quora.com/Is-Irene-of-Red-Velvet-30-years-old
+    "JKRowling"		        https://www.biography.com/authors-writers/jk-rowling
+    "Jack Ma"		        https://www.forbes.com/profile/jack-ma/?sh=c98a8841ee43
+    "Jackie Chan"           https://www.themoviedb.org/person/18897-jackie-chan
+    "Jason Momoa"           https://www.imdb.com/name/nm0597388/
+    "Jeff Bezos"            https://www.britannica.com/biography/Jeff-Bezos
+    "Jenna Ortega"          https://en.wikipedia.org/wiki/Jenna_Ortega
+    "Jennie Blackpink"      https://vi.wikipedia.org/wiki/Jennie_%28ca_s%C4%A9%29
+    "Jennifer Lawrence"     https://www.biography.com/actors/jennifer-lawrence
+    "Jessica Barden"        https://www.rottentomatoes.com/celebrity/jessica_barden
+    "Jisoo Blackpink"       https://vi.wikipedia.org/wiki/Jisoo
+    "Joe Biden"             https://www.whitehouse.gov/administration/president-biden/
+    "Karen Gillan"          https://www.rottentomatoes.com/celebrity/karen_gillan
+    "Keanu Reeves"          https://www.imdb.com/name/nm0000206/
+    "Kit Harington"         https://www.harpersbazaar.com/uk/culture/going-out/news/a32919/in-conversation-with-kit-harington/
+    "LeBron James"          https://www.forbes.com/profile/lebron-james/?sh=28510b902398
+    "Leonardo Dicaprio"     https://vi.wikipedia.org/wiki/Leonardo_DiCaprio
+    "Lewis Hamilton"        https://vi.wikipedia.org/wiki/Lewis_Hamilton
+    "Lily Collins"          https://www.britannica.com/biography/Lily-Collins
+    "Lisa Blackpink"        https://vi.wikipedia.org/wiki/Lisa_%28rapper%29
+    "Marc Marquez"          https://en.wikipedia.org/wiki/Marc_M%C3%A1rquez
+    "Marie Curie"           https://en.wikipedia.org/wiki/Marie_Curie
+    "Mark Wahlberg"         https://en.wikipedia.org/wiki/Mark_Wahlberg
+    "Megan Fox"             https://vi.wikipedia.org/wiki/Megan_Fox
+    "Messi"                 https://www.goal.com/en-us/lists/what-people-should-really-know-lionel-messi-inter-miami-ian-fray-lifts-lid-side-mls-superstar-fans-dont-see/blt1dc3a41602f165f3
+    "Micheal B Jordan"      https://www.britannica.com/biography/Michael-B-Jordan
+    "Mina Twice"            https://vi.wikipedia.org/wiki/Myoui_Mina
+    "Mohamed Salah"         https://en.wikipedia.org/wiki/Mohamed_Salah
+    "Nancy Momoland"        https://hamariweb.com/profiles/nancy-momoland_13475
+    "Nick Vujicic"          https://en.wikipedia.org/wiki/Nick_Vujicic
+    "Olivia Rodrigo"        https://en.wikipedia.org/wiki/Olivia_Rodrigo
+    "Oprah Winfrey"         https://www.amacad.org/person/oprah-winfrey
+    "Ozil"                  https://www.transfermarkt.com/mesut-ozil/profil/spieler/35664           
+    "Quan Nguyen"           original
+    "Quynh Nguyen"          ???
+    "Robert Pattinson"      https://vi.wikipedia.org/wiki/Robert_Pattinson
+    "Rose Blackpink"        https://tuoitre.vn/rose.html
+    "Rose Leslie"           https://www.themoviedb.org/person/1223793-rose-leslie
+    "Sam Claflin"           https://nypost.com/2013/11/16/how-a-little-alcohol-helped-sam-claflin-prepare-for-catching-fire/
+    "Shakira"               https://www.firstforwomen.com/posts/entertainment/shakira-age
+    "Sophie Turner"         https://www.popsugar.co.uk/Sophie-Turner
+    "Steven Spielberg"      https://vi.wikipedia.org/wiki/Steven_Spielberg
+    "Suzy Bae"              https://vi.wikipedia.org/wiki/Bae_Suzy
+    "Taylor Swift"          https://www.vogue.com/article/taylor-swift-vmas-beauty
+    "Thang Doi"             original
+    "Tom Cruise"            https://vi.wikipedia.org/wiki/Tom_Cruise
+    "Tom Holland"           https://en.wikipedia.org/wiki/Tom_Holland
+    "Tzuyu Twice"           https://en.wikipedia.org/wiki/Tzuyu
+    "Ursula Corbero"        https://en.wikipedia.org/wiki/%C3%9Arsula_Corber%C3%B3
+    "Vladimir V Putin"      https://vi.wikipedia.org/wiki/Vladimir_Vladimirovich_Putin
+    "Willem Dafoe"          https://en.wikipedia.org/wiki/Willem_Dafoe
+    "Yoona"                 https://vi.wikipedia.org/wiki/Yoona
+    "Yuna Itzy"             https://namu.wiki/jump/kFJYL7NBBse%2FMaMZO56FEN6uJy1K4HqCryqQP6VlLSt8%2BJdQuJwKCOFDi68BckkX1Bzx%2FvMlk7UpkojaPGHW%2FA%3D%3D
+    "Zedd"                  https://en.wikipedia.org/wiki/Zedd
+    "Cong Phuong"           https://vietnamnet.vn/trung-quoc-ngai-cong-phuong-khi-gap-tuyen-viet-nam-779753.html
+    "Do My Linh             https://thanhnien.vn/su-nghiep-cua-hoa-hau-do-my-linh-truoc-khi-lay-chong-1851475978.htm
+    "Khanh Vy"              https://tienphong.vn/hot-girl-7-thu-tieng-khanh-vy-nhan-hoc-bong-toan-phan-thac-si-cua-chinh-phu-anh-post1544492.tpo
+    "Luu Diec Phi"          https://vi.wikipedia.org/wiki/L%C6%B0u_Di%E1%BB%87c_Phi
+    "Mai Phuong Thuy"       https://nld.com.vn/giai-tri/mai-phuong-thuy-bat-mi-y-dinh-tro-thanh-co-dau-tuoi-40-20211107082301897.htm
+    "My Tam"                https://www.facebook.com/mytam.info/photos/d41d8cd9/835418857964733/?paipv=0&eav=AfaqJ57j2ZZGy_V17qhR2VfI4zxAAiUXCy-wLYBp0G_LO3WX9YQm1YC0BwhJpTKzxv4&_rdr
+    "Ngo Bao Chau"          https://fulbright.edu.vn/our-team/ngo-bao-chau/
+    "Nguyen Phu Trong"      https://vnexpress.net/mien-nhiem-chu-tich-nuoc-nguyen-phu-trong-4256842.html
+    "Park Hang Seo"         https://nld.com.vn/the-thao/hlv-park-hang-seo-tiet-lo-4-muc-tieu-lon-trong-nam-2021-20210206164139253.htm
+    "Park Seo Joon"         https://vtv.vn/van-hoa-giai-tri/park-seo-joon-len-duong-sang-my-tham-gia-sieu-pham-marvel-20210903200943683.htm
+    "Pham Nhat Vuong"       https://vnexpress.net/chu-de/pham-nhat-vuong-1621
+    "Tran Thanh"            https://www.youtube.com/channel/UCqL0-EknCK4m5pHrH79fOcw
+    "Vu Duc Dam"            https://vi.wikipedia.org/wiki/V%C5%A9_%C4%90%E1%BB%A9c_%C4%90am#/media/T%E1%BA%ADp_tin:Mr._Vu_Duc_Dam.jpg
