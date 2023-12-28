@@ -2,6 +2,7 @@ from typing import NewType
 from keras.models import load_model
 import numpy as np
 import cv2
+import json
 
 MatLike = NewType("MatLike", np.array)
 
@@ -110,18 +111,30 @@ IMAGE_SIZE = (224, 224)
 COLOR = cv2.COLOR_BGR2GRAY
 
 
+def convert(img: MatLike, color) -> MatLike:
+    if color == "grayscale":
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    elif color == "rgb":
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    return img[None, :, :]
+
+
 class CNN_Model:
-    def __init__(self, model_path="./Models/cnn_model_2.keras") -> None:
-        self.model = load_model(model_path)
-        self.labels = LABELS
+    def __init__(self, json_path) -> None:
+        with open(json_path, "r") as data:
+            info = json.load(data)
+            self.model = load_model(info["model_path"])
+            self.img_size = info["input_size"]
+            self.img_color = info["color_mode"]
+            self.labels = LABELS
 
     def summary(self):
         return self.model.summary()
 
     def predict(self, image: MatLike):
-        image = cv2.resize(image, IMAGE_SIZE)
-        image = cv2.cvtColor(image, COLOR)
-        prediction = self.model.predict(image[None, :, :])
+        image = cv2.resize(image, self.img_size[:2])
+        image = convert(image, self.img_color)
+        prediction = self.model.predict(image)
         arg_max = np.argmax(prediction)
         label: str = LABELS[arg_max]
         confidence: float = prediction[0][arg_max]
@@ -129,7 +142,7 @@ class CNN_Model:
 
 
 if __name__ == "__main__":
-    model = CNN_Model()
+    model = CNN_Model("./Models/JSON/cnn_model_2.json")
     print("Number of labels:", len(LABELS))
     test_image = cv2.imread("./Assets/Faces/Drake.jpg")
     print(model.predict(test_image))

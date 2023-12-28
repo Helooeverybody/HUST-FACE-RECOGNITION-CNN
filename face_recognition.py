@@ -45,7 +45,7 @@ def main_program(video_feed=1):
     show_face = False
 
     # Import model
-    model = CNN_Model()
+    model = CNN_Model("./Models/JSON/cnn_model_2.json")
 
     # Default output
     extracted_face = cv2.imread("./Assets/UI/unknown.png")
