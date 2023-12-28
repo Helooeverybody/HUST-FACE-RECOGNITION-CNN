@@ -13,7 +13,7 @@
 
 A python programme that uses cv2 face detection with a pretrained CNN model for face recognition.
 The model is trained using tensorflow libraries on a dataset comprises of 99 different labels,
-each has about 10 or more images. The model should be capable of recognising human faces that
+each has about 20 images. The model should be capable of recognising human faces that
 it is trained on and be able to put matching label with reasonable accuracy.
 The model is trained using Google Colab T4 GPU and the weights are saved to local machine.
 
