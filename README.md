@@ -1,8 +1,8 @@
 # Face recognition app
 
 - Status: Semi-Complete (pending approval from the group)
-- To implement:
-  - Val accuracy is still at 87%, can be further improved
+- Update 20/12/23:
+  - Val accuracy is now at 91% (see ![collab notebook](./Notebooks/colab_notebook.ipynb)), can be further improved
   - Need a way to train the model to recognise new faces
 
 ## Projects description
