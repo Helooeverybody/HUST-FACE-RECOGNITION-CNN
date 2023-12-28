@@ -2,8 +2,13 @@
 
 - Status: Semi-Complete (pending approval from the group)
 - Update 20/12/23:
-  - Val accuracy is now at 91% (see ![collab notebook](./Notebooks/colab_notebook.ipynb)), can be further improved
+  - Val accuracy is now at 91% (see ![collab notebook](./Notebooks/colab_notebook.ipynb))
   - Need a way to train the model to recognise new faces
+- Todo
+  - Train models using transfer learning
+  - [____] VGG16
+  - [____] ResNet
+  - [____] AlexNet
 
 ## Projects description
 
