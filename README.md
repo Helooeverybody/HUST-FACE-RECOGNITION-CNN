@@ -1,10 +1,9 @@
 # Face recognition app
 
 - Status: Semi-Complete (pending approval from the group)
-- Update 20/12/23:
+- Update 28/12/23:
   - Val accuracy is now at 91% (see ![collab notebook](./Notebooks/colab_notebook.ipynb))
-  - Need a way to train the model to recognise new faces
-- Todo
+- Todo:
   - Train models using transfer learning
   - [____] VGG16
   - [____] ResNet
