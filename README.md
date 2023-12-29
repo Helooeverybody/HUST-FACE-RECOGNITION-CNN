@@ -43,19 +43,21 @@ cvzone : create app ui (a true life saver)
 
 ## Folder structures
 
+```
 .
 ├── Assets/
 ├── Faces/
-├── Models/  
-| ├── summary.txt
-| ├── performance.png
-| ├── cnn_model.keras
-| ├── cnn_weights.keras
-| └── cnn_model.py
+├── Models/
+|   ├── summary.txt
+|   ├── performance.png
+|   ├── cnn_model.keras
+|   ├── cnn_weights.keras
+|   └── cnn_model.py
 ├── Modules/
-| └── detect_faces.py
+|   └── detect_faces.py
 ├── create_model.ipynb
 └── face_recognition.py
+```
 
 ## How to use
 
