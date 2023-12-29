@@ -5,7 +5,7 @@ import cv2
 import cvzone
 
 
-def draw_result(frame, label, confidence):
+def draw_result(frame, label, uncertainty):
     """Handle drawing result."""
     # Draw label
     cv2.putText(
@@ -20,7 +20,7 @@ def draw_result(frame, label, confidence):
     # Draw confidence
     cv2.putText(
         img=frame,
-        text="Confidence: " + f"{confidence :.2%}",
+        text="Uncertainty: " + f"{uncertainty :.2%}",
         org=(543, 375),
         fontFace=cv2.FONT_HERSHEY_SIMPLEX,
         fontScale=0.5,
@@ -29,7 +29,7 @@ def draw_result(frame, label, confidence):
     )
 
 
-def main_program(video_feed=1):
+def main_program(video_feed=1, threshold=0.2):
     # Set up camera and window
     camera = cv2.VideoCapture(video_feed)
 
@@ -51,7 +51,7 @@ def main_program(video_feed=1):
     extracted_face = cv2.imread("./Assets/UI/unknown.png")
     box_img = cv2.imread("./Assets/UI/unknown.png")
     predict_label = "None"
-    predict_confidence = 0
+    uncertainty = 0
 
     while True:
         # Capture face using cv2 face recognition
@@ -89,8 +89,8 @@ def main_program(video_feed=1):
 
         # Make prediction on extracted face
         if predict_img:
-            predict_label, predict_confidence = model.predict(extracted_face)
-            print(predict_label, predict_confidence)
+            predict_label, uncertainty = model.predict(extracted_face, threshold)
+            print(predict_label, uncertainty)
             predict_img = False
 
         # Draw UI
@@ -105,7 +105,7 @@ def main_program(video_feed=1):
         ui_base = cvzone.overlayPNG(ui_base, ui_front)
         if dialoge_count < 5:
             ui_base = cvzone.overlayPNG(ui_base, ui_dialog)
-        draw_result(ui_base, predict_label, predict_confidence)
+        draw_result(ui_base, predict_label, uncertainty)
 
         cv2.imshow("Face Recognition", ui_base)
 
@@ -115,4 +115,5 @@ def main_program(video_feed=1):
 
 if __name__ == "__main__":
     video_feed = 1
-    main_program(video_feed)
+    threshold = 0.2
+    main_program(video_feed, threshold)

@@ -2,7 +2,7 @@ import cv2
 from Models import CNN_Model
 from Modules import detect_faces
 
-model = CNN_Model()
+model = CNN_Model("./Models/JSON/cnn_model_2.json")
 
 
 def main_program(video_feed, flip):
@@ -20,8 +20,8 @@ def main_program(video_feed, flip):
         faces = detect_faces(frame)
         for x, y, w, h in faces:
             detected_face = frame[y : y + h, x : x + w]
-            label, confidence = model.predict(detected_face)
-            text = label + " " + f"{confidence :.2%}"
+            label, uncertainty = model.predict(detected_face)
+            text = label + " " + f"{uncertainty :.2%}"
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             cv2.putText(
                 img=frame,

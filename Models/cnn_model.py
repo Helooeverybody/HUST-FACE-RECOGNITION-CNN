@@ -3,6 +3,7 @@ from keras.models import load_model
 import numpy as np
 import cv2
 import json
+import math
 
 MatLike = NewType("MatLike", np.array)
 
@@ -122,30 +123,35 @@ def convert(img: MatLike, color) -> MatLike:
 class CNN_Model:
     def __init__(self, json_path) -> None:
         with open(json_path, "r") as data:
-            info = json.load(data)
-            self.model = load_model(info["model_path"])
-            self.img_size = info["input_size"]
-            self.img_color = info["color_mode"]
+            model_info = json.load(data)
+            self.model = load_model(model_info["model_path"])
+            self.img_size = model_info["input_size"]
+            self.img_color = model_info["color_mode"]
             self.labels = LABELS
 
     def summary(self):
         return self.model.summary()
 
-    def predict(self, image: MatLike):
+    def predict(self, image: MatLike, threshold=0.2):
         image = cv2.resize(image, self.img_size[:2])
         image = convert(image, self.img_color)
         prediction = self.model.predict(image)
         arg_max = np.argmax(prediction)
-        label: str = LABELS[arg_max]
-        confidence: float = prediction[0][arg_max]
-        return label, confidence
+        label = "Unknown"
+        res = 0
+        for p in prediction[0]:
+            res -= p * math.log(p, 99)
+        if res <= threshold:
+            label: str = LABELS[arg_max]
+        return label, res
 
 
 if __name__ == "__main__":
     model = CNN_Model("./Models/JSON/cnn_model_2.json")
     print("Number of labels:", len(LABELS))
-    test_image = cv2.imread("./Assets/Faces/Drake.jpg")
-    print(model.predict(test_image))
+    test_image = cv2.imread("./Assets/Faces/Duy Dat.jpg")
+    prediction = model.predict(test_image)
+    print(prediction)
     while True:
         test_image = cv2.resize(test_image, (224, 224))
         cv2.imshow("Display", test_image)
