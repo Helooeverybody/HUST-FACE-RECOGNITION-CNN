@@ -42,18 +42,18 @@ cvzone : create app ui (a true life saver)
 
 ## Folder structures
 
-├── Assets : Assets to create app UI
-├── Faces : Some test faces
+├── Assets
+├── Faces
 ├── Models  
-| ├── summary.txt : summary about the model
-| ├── performance.png : model performance
-| ├── cnn_model.keras : trained CNN model
-| ├── cnn_weights.keras : model weights
-| └── cnn_model.py : create model instance
+| ├── summary.txt
+| ├── performance.png
+| ├── cnn_model.keras
+| ├── cnn_weights.keras
+| └── cnn_model.py
 ├── Modules
-| └── detect_faces.py : detect faces from an image
-├── create_model.ipynb : create model from weights trained on google colab
-└── face_recognition.py : main programme
+| └── detect_faces.py
+├── create_model.ipynb
+└── face_recognition.py
 
 ## How to use
 
