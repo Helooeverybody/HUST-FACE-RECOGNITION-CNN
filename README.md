@@ -42,6 +42,7 @@ cvzone : create app ui (a true life saver)
 
 ## Contents
 
+_Table of contents_
 Hust AI Projects.zip
 |- Assets : Assets to create app UI
 |- Faces : Some test faces
