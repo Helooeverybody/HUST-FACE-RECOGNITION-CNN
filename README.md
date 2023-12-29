@@ -40,22 +40,20 @@ tensorflow, keras : create and load cnn model
 cv2 : video capture, face detection and create app ui
 cvzone : create app ui (a true life saver)
 
-## Contents
+## Folder structures
 
-_Table of contents_
-Hust AI Projects.zip
-|- Assets : Assets to create app UI
-|- Faces : Some test faces
-|- Models  
-| |- summary.txt : summary about the model
-| |- performance.png : model performance
-| |- cnn_model.keras : trained CNN model
-| |- cnn_weights.keras : model weights
-| |- cnn_model.py : create model instance
-|- Modules
-| |- detect_faces.py : detect faces from an image
-|- create_model.ipynb : create model from weights trained on google colab
-|- face_recognition.py : main programme
+├── Assets : Assets to create app UI
+├── Faces : Some test faces
+├── Models  
+| ├── summary.txt : summary about the model
+| ├── performance.png : model performance
+| ├── cnn_model.keras : trained CNN model
+| ├── cnn_weights.keras : model weights
+| ├── cnn_model.py : create model instance
+├── Modules
+| ├── detect_faces.py : detect faces from an image
+├── create_model.ipynb : create model from weights trained on google colab
+├── face_recognition.py : main programme
 
 ## How to use
 
