@@ -1,13 +1,14 @@
-# Face recognition app
+# Face recognition program
 
+By group 23 Intro AI
+Members:
+
+- Nguyen Nhat Minh 20225510
+- Doi Sy Thang - 20225528
+- Ngo Duy Dat - 20225480
+- Ta Ho Thanh Dat - 20225482
+- Nguyen Minh Quan - 20225520
 - Status: Semi-Complete (pending approval from the group)
-- Update 28/12/23:
-  - Val accuracy is now at 91% (see ![collab notebook](./Notebooks/colab_notebook.ipynb))
-- Todo:
-  - Train models using transfer learning
-  - [____] VGG16
-  - [____] ResNet
-  - [____] AlexNet
 
 ## Projects description
 
@@ -42,15 +43,16 @@ cvzone : create app ui (a true life saver)
 
 ## Folder structures
 
-├── Assets
-├── Faces
-├── Models  
+.
+├── Assets/
+├── Faces/
+├── Models/  
 | ├── summary.txt
 | ├── performance.png
 | ├── cnn_model.keras
 | ├── cnn_weights.keras
 | └── cnn_model.py
-├── Modules
+├── Modules/
 | └── detect_faces.py
 ├── create_model.ipynb
 └── face_recognition.py
