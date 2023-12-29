@@ -1,0 +1,7 @@
+{
+    "name": "vgg16", 
+    "model_path": "./Models/Trained/vgg16.keras",
+    "weights_path": "./Models/Weights/vgg16_weights.keras",
+    "input_size": [224, 224, 3],
+    "color_mode": "rgb"
+}

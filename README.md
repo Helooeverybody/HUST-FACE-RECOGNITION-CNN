@@ -1,6 +1,6 @@
-# Face Recognition program (By group 23 Intro AI)
+# Face Recognition program (Intro AI)
 
-Members:
+Group 23 members:
 
 - Nguyen Nhat Minh 20225510
 - Doi Sy Thang - 20225528
@@ -30,18 +30,23 @@ Detail about the model's architecture can be found in ![summary.txt](./Models/su
 
 The dataset is split into two: data_train and data_test and the model is trained exclusively on
 data_train. The model is then validate based on its accuracy on data_test and trained with
-early escape to prevent increase in validation loss.
-Detail about the model's performance can be found in ![performance.png](./Models/performance.png).
+early escape.
+
+Below is the performance of our model compared with VGG-16:
+![performance.png](./Models/performance.png).
 
 ## Requirements
 
 `requirements.txt`
+
+```
 cvzone==1.6.1
 keras==2.14.0
 matplotlib==3.8.0
 numpy==1.26.0
 opencv-python==4.8.1.78
 tensorflow==2.14.0
+```
 
 ## Folder structures
 
@@ -51,23 +56,32 @@ tensorflow==2.14.0
 |   ├── Faces/              # Image representation of each labels
 |   ├── UI/                 # UI assets
 ├── Models/
-|   ├── JSON/               # json files containing the information of each model
-|   ├── Trained/            # trained models
-|   ├── Weights/            # model weights
-|   ├── summary.txt         # summary of the main model
-|   ├── performance.png     # training
-|   └── cnn_model.py
+|   ├── JSON/               # JSON files containing the information of each model
+|   ├── Trained/            # Trained models
+|   ├── Weights/            # Model weights
+|   ├── summary.txt         # Summary of the main model
+|   ├── performance.png     # Comparison between our model and vgg16
+|   └── cnn_model.py        # CNN model instance
 ├── Modules/
-|   ├── detect_faces.py     # face detection module
-|   └── ...
-├── create_model.ipynb
-└── face_recognition.py
+|   ├── detect_faces.py     # Face detection module
+|   └── get_repr.py         # Handle showing label image
+├── face_recognition.py     # Face recognition main program
+├── live_recognition.py     # Real time face recognition
+└── requirement.txt         # Dependencies
+
 ```
 
 ## How to use
 
-- run face_recognition.py
+`face_recognition.py`
+
+- run the python file
 - press "f" to flip camera
 - press "c" to capture the detected face and give prediction
 - press "s" to show captured face
+- press "q" to quit
+
+`live_recognition.py`
+
+- run the python file
 - press "q" to quit
