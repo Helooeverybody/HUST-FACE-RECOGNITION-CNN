@@ -1,4 +1,4 @@
-# Face recognition program (By group 23 Intro AI)
+# Face Recognition program (By group 23 Intro AI)
 
 Members:
 
@@ -7,18 +7,17 @@ Members:
 - Ngo Duy Dat - 20225480
 - Ta Ho Thanh Dat - 20225482
 - Nguyen Minh Quan - 20225520
-- Status: Semi-Complete (pending approval from the group)
 
 ## Projects description
 
 A python programme that uses cv2 face detection with a pretrained CNN model for face recognition.
 The model is trained using Google Colab T4 GPU and tensorflow libraries on a dataset comprises of
 99 different labels, each has about 20 images. The model should be capable to recognise human faces that
-it is trained on and be able to put matching label with reasonable accuracy.
+it is trained on and be able to put matching label when the uncertainty is low enough.
 
 ## CNN model
 
-Our cnn model is inspired by the VGG-16 model and taylored to be able to be trained on a much smaller
+Our CNN model is inspired by the VGG-16 model and taylored to be able to be trained on a much smaller
 dataset. The model accepts 224x224x1 grayscale images as input and the output will the probability
 of each image being assigned to each label. The predicted label is considered to be the label
 with the highest probability.
@@ -44,24 +43,23 @@ numpy==1.26.0
 opencv-python==4.8.1.78
 tensorflow==2.14.0
 
-tensorflow, keras : create and load cnn model
-cv2 : video capture, face detection and create app ui
-cvzone : create app ui (a true life saver)
-
 ## Folder structures
 
 ```
 .
 ├── Assets/
-├── Faces/
+|   ├── Faces/              # Image representation of each labels
+|   ├── UI/                 # UI assets
 ├── Models/
-|   ├── summary.txt
-|   ├── performance.png
-|   ├── cnn_model.keras
-|   ├── cnn_weights.keras
+|   ├── JSON/               # json files containing the information of each model
+|   ├── Trained/            # trained models
+|   ├── Weights/            # model weights
+|   ├── summary.txt         # summary of the main model
+|   ├── performance.png     # training
 |   └── cnn_model.py
 ├── Modules/
-|   └── detect_faces.py
+|   ├── detect_faces.py     # face detection module
+|   └── ...
 ├── create_model.ipynb
 └── face_recognition.py
 ```

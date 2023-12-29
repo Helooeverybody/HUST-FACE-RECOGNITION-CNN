@@ -1,0 +1,7 @@
+{
+    "name": "cnn_model_3", 
+    "model_path": "./Models/Trained/cnn_model_3.keras",
+    "weights_path": "./Models/Weights/cnn_weights_3.keras",
+    "input_size": [224, 224, 1],
+    "color_mode": "grayscale"
+}

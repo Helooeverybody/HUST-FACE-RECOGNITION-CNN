@@ -122,6 +122,7 @@ def convert(img: MatLike, color) -> MatLike:
 
 class CNN_Model:
     def __init__(self, json_path) -> None:
+        """Create a CNN model instance from a json file."""
         with open(json_path, "r") as data:
             model_info = json.load(data)
             self.model = load_model(model_info["model_path"])
@@ -130,17 +131,23 @@ class CNN_Model:
             self.labels = LABELS
 
     def summary(self):
+        """Return the summary of the model."""
         return self.model.summary()
 
     def predict(self, image: MatLike, threshold=0.2):
+        """Return the label and uncertainty of an image."""
+        # Preprocess input to match the model's input size
         image = cv2.resize(image, self.img_size[:2])
         image = convert(image, self.img_color)
+        # Perform prediction and calculate matching label and uncertainty
         prediction = self.model.predict(image)
         arg_max = np.argmax(prediction)
         label = "Unknown"
         res = 0
         for p in prediction[0]:
             res -= p * math.log(p, 99)
+        # The model will be able to recognize an image when the uncertainty
+        # is less than some threshold
         if res <= threshold:
             label: str = LABELS[arg_max]
         return label, res

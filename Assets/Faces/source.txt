@@ -11,7 +11,7 @@ Image sources
     "Chipu"                 https://vi.wikipedia.org/wiki/Chi_Pu
     "Chris Evans"           https://www.britannica.com/biography/Chris-Evans-American-actor
     "Chris Martin"          https://www.biography.com/musicians/chris-martin
-    "Chris Pratt"           https://deadline.com/2022/08/garfield-chris-pratt-release-date-1235084683/
+    "Chris Pratt"           https://www.themoviedb.org/person/73457-chris-pratt
     "Cillian Murphy"	    https://en.wikipedia.org/wiki/Cillian_Murphy
     "Claudia Salas"         https://www.imdb.com/name/nm10273610/
     "Cristiana Ronaldo"     https://www.transfermarkt.com/cristiano-ronaldo/profil/spieler/8198
