@@ -156,7 +156,7 @@ class CNN_Model:
 if __name__ == "__main__":
     model = CNN_Model("./Models/JSON/cnn_model_2.json")
     print("Number of labels:", len(LABELS))
-    test_image = cv2.imread("./Assets/Faces/Duy Dat.jpg")
+    test_image = cv2.imread("./Assets/Faces/Keanu Reeves.jpg")
     prediction = model.predict(test_image)
     print(prediction)
     while True:

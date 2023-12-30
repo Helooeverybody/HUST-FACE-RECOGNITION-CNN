@@ -40,5 +40,4 @@ def main_program(video_feed, flip):
 
 if __name__ == "__main__":
     cam_id = 1
-    video_path = "./Assets/Videos/keanu_cyberpunk.mp4"
     main_program(cam_id, flip=False)
