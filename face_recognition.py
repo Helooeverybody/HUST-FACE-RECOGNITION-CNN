@@ -120,5 +120,5 @@ def main_program(video_feed=1, zoom_depth=5, threshold=0.2):
 if __name__ == "__main__":
     video_feed = 1
     zoom_depth = 5
-    threshold = 0.4
+    threshold = 0.3
     main_program(video_feed, zoom_depth, threshold)
