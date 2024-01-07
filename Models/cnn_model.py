@@ -1,4 +1,6 @@
 from typing import NewType
+from keras import Sequential
+from keras.layers import RandomZoom
 from keras.models import load_model
 import numpy as np
 import cv2
@@ -134,29 +136,37 @@ class CNN_Model:
         """Return the summary of the model."""
         return self.model.summary()
 
-    def predict(self, image: MatLike, threshold=0.2):
+    def predict(self, image: MatLike, zoom_depth: int = 5, threshold: float = 0.2):
         """Return the label and uncertainty of an image."""
         # Preprocess input to match the model's input size
         image = cv2.resize(image, self.img_size[:2])
         image = convert(image, self.img_color)
-        # Perform prediction and calculate matching label and uncertainty
-        prediction = self.model.predict(image)
-        arg_max = np.argmax(prediction)
-        label = "Unknown"
-        res = 0
-        for p in prediction[0]:
-            res -= p * math.log(p, 99)
-        # The model will be able to recognize an image when the uncertainty
-        # is less than some threshold
-        if res <= threshold:
-            label: str = LABELS[arg_max]
-        return label, res
+
+        # Perform prediction on multiple zoom levels
+        calculations = []
+        for zoom_level in np.arange(0, 1, 1 / zoom_depth):
+            zoom = Sequential([RandomZoom((zoom_level,) * 2, fill_mode="nearest")])
+            zoomed_img = zoom(image).numpy().astype("uint8")
+
+            # Perform prediction and calculate matching label and uncertainty
+            prediction = self.model.predict(zoomed_img)
+            arg_max = np.argmax(prediction)
+
+            # The model will be able to recognize an image when the uncertainty
+            # is less than the threshold
+            uncertainty = sum(-p * math.log(p, 99) for p in prediction[0])
+            label = "Unknown"
+            if uncertainty <= threshold:
+                label: str = LABELS[arg_max]
+            print(label, uncertainty)
+            calculations.append((label, uncertainty))
+        return min(calculations, key=lambda x: x[1])
 
 
 if __name__ == "__main__":
-    model = CNN_Model("./Models/JSON/cnn_model_2.json")
+    model = CNN_Model("./Models/JSON/cnn_model_3.json")
     print("Number of labels:", len(LABELS))
-    test_image = cv2.imread("./Assets/Faces/Keanu Reeves.jpg")
+    test_image = cv2.imread("./Assets/Faces/Thang Doi.jpg")
     prediction = model.predict(test_image)
     print(prediction)
     while True:

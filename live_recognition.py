@@ -20,7 +20,7 @@ def main_program(video_feed, flip):
         faces = detect_faces(frame)
         for x, y, w, h in faces:
             detected_face = frame[y : y + h, x : x + w]
-            label, uncertainty = model.predict(detected_face)
+            label, uncertainty = model.predict(detected_face, 1)
             text = label + " " + f"{uncertainty :.2%}"
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             cv2.putText(

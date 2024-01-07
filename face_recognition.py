@@ -29,7 +29,7 @@ def draw_result(frame, label, uncertainty):
     )
 
 
-def main_program(video_feed=1, threshold=0.2):
+def main_program(video_feed=1, zoom_depth=5, threshold=0.2):
     # Set up camera and window
     camera = cv2.VideoCapture(video_feed)
 
@@ -89,8 +89,12 @@ def main_program(video_feed=1, threshold=0.2):
 
         # Make prediction on extracted face
         if predict_img:
-            predict_label, uncertainty = model.predict(extracted_face, threshold)
-            print(predict_label, uncertainty)
+            predict_label, uncertainty = model.predict(
+                extracted_face,
+                zoom_depth,
+                threshold,
+            )
+            print(">", predict_label, uncertainty)
             predict_img = False
 
         # Draw UI
@@ -115,5 +119,6 @@ def main_program(video_feed=1, threshold=0.2):
 
 if __name__ == "__main__":
     video_feed = 1
-    threshold = 0.2
-    main_program(video_feed, threshold)
+    zoom_depth = 5
+    threshold = 0.4
+    main_program(video_feed, zoom_depth, threshold)
