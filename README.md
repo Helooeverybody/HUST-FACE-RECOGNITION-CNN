@@ -49,7 +49,7 @@ tensorflow==2.14.0
 pyautogui==0.9.54
 ```
 
-3rd party app: ![Epoccam Camera Hub by Elgato](https://www.elgato.com/us/en/s/downloads)
+3rd party app: [Epoccam Camera Hub by Elgato](https://www.elgato.com/us/en/s/downloads)
 
 ## Folder structures
 
