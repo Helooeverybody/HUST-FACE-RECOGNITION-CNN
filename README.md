@@ -46,7 +46,10 @@ matplotlib==3.8.0
 numpy==1.26.0
 opencv-python==4.8.1.78
 tensorflow==2.14.0
+pyautogui==0.9.54
 ```
+
+3rd party app: ![Epoccam Camera Hub by Elgato](https://www.elgato.com/us/en/s/downloads)
 
 ## Folder structures
 
@@ -67,6 +70,7 @@ tensorflow==2.14.0
 |   └── get_repr.py         # Handle showing label image
 ├── face_recognition.py     # Face recognition main program
 ├── live_recognition.py     # Real time face recognition
+├── phone_recognition.py    # Face recognition using better camera from phone and screen capture
 └── requirement.txt         # Dependencies
 
 ```
@@ -80,8 +84,9 @@ tensorflow==2.14.0
 - press "c" to capture the detected face and give prediction
 - press "s" to show captured face
 - press "q" to quit
+- to swap current model, press "," or "."
 
-`live_recognition.py`
+  `live_recognition.py`
 
 - run the python file
 - press "q" to quit
