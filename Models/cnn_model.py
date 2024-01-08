@@ -1,6 +1,5 @@
 from typing import NewType
-from keras import Sequential
-from keras.layers import RandomZoom
+from keras.layers import RandomZoom, RandomBrightness
 from keras.models import load_model
 import numpy as np
 import cv2
@@ -114,6 +113,29 @@ IMAGE_SIZE = (224, 224)
 COLOR = cv2.COLOR_BGR2GRAY
 
 
+# Input augmentation
+def zoom(img, zoom_level):
+    return (
+        RandomZoom(
+            (zoom_level,) * 2,
+            fill_mode="reflect",
+        )(img)
+        .numpy()
+        .astype("uint8")
+    )
+
+
+def brightness(img, brightness_level):
+    return (
+        RandomBrightness(
+            (brightness_level,) * 2,
+        )(img)
+        .numpy()
+        .astype("uint8")
+    )
+
+
+# Convert input image a color type
 def convert(img: MatLike, color) -> MatLike:
     if color == "grayscale":
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -128,28 +150,40 @@ class CNN_Model:
         with open(json_path, "r") as data:
             model_info = json.load(data)
             self.model = load_model(model_info["model_path"])
+            self.name = model_info["name"]
             self.img_size = model_info["input_size"]
             self.img_color = model_info["color_mode"]
-            self.labels = LABELS
+            self.labels = LABELS.copy()
 
     def summary(self):
         """Return the summary of the model."""
         return self.model.summary()
 
-    def predict(self, image: MatLike, zoom_depth: int = 5, threshold: float = 0.2):
+    def predict(
+        self,
+        image: MatLike,
+        zoom_depth: int = 3,
+        brightness_levels: int = 3,
+        threshold: float = 0.2,
+        verbose=0,
+    ):
         """Return the label and uncertainty of an image."""
         # Preprocess input to match the model's input size
         image = cv2.resize(image, self.img_size[:2])
         image = convert(image, self.img_color)
 
         # Perform prediction on multiple zoom levels
-        calculations = []
+        img_batch = []
         for zoom_level in np.arange(0, 1, 1 / zoom_depth):
-            zoom = Sequential([RandomZoom((zoom_level,) * 2, fill_mode="nearest")])
-            zoomed_img = zoom(image).numpy().astype("uint8")
+            for brightness_level in np.linspace(-0.2, 0.2, brightness_levels):
+                augmented_image = zoom(image, zoom_level)
+                augmented_image = brightness(augmented_image, brightness_level)
+                img_batch.append(augmented_image)
 
-            # Perform prediction and calculate matching label and uncertainty
-            prediction = self.model.predict(zoomed_img)
+        # Perform prediction and calculate matching label and uncertainty
+        predict_list = []
+        for img in img_batch:
+            prediction = self.model.predict(img, verbose=verbose)
             arg_max = np.argmax(prediction)
 
             # The model will be able to recognize an image when the uncertainty
@@ -159,16 +193,17 @@ class CNN_Model:
             if uncertainty <= threshold:
                 label: str = LABELS[arg_max]
             print(label, uncertainty)
-            calculations.append((label, uncertainty))
-        return min(calculations, key=lambda x: x[1])
+            predict_list.append((label, uncertainty))
+        return min(predict_list, key=lambda x: x[1])
 
 
 if __name__ == "__main__":
     model = CNN_Model("./Models/JSON/cnn_model_3.json")
+    model.summary()
     print("Number of labels:", len(LABELS))
     test_image = cv2.imread("./Assets/Faces/Thang Doi.jpg")
-    prediction = model.predict(test_image)
-    print(prediction)
+    prediction = model.predict(test_image, 3, 3)
+    print(">>>", *prediction)
     while True:
         test_image = cv2.resize(test_image, (224, 224))
         cv2.imshow("Display", test_image)
