@@ -3,7 +3,17 @@ from Modules import detect_faces
 from Modules import get_representation
 import cv2
 import cvzone
+import pyautogui
+import numpy as np
 from pathlib import Path
+
+
+def from_phone_cam():
+    """Require screen capture"""
+    img = np.array(pyautogui.screenshot())
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    img = img[100:950, 860:1910]
+    return True, img
 
 
 def draw_texts(frame, model_name, label, uncertainty):
@@ -40,12 +50,7 @@ def draw_texts(frame, model_name, label, uncertainty):
     )
 
 
-def main_program(
-    video_feed=1, zoom_depth=3, brightness_levels=3, threshold=0.2, verbose=0
-):
-    # Set up camera and window
-    camera = cv2.VideoCapture(video_feed)
-
+def main_program(zoom_depth=3, brightness_levels=3, threshold=0.2, verbose=0):
     # Import UI assets
     ui_base = cv2.imread("./Assets/UI/base.png")
     ui_front = cv2.imread("./Assets/UI/bg.png", cv2.IMREAD_UNCHANGED)
@@ -54,7 +59,7 @@ def main_program(
     # Programme parameters
     dialoge_count = 0
     predict_img = False
-    flip_image = True
+    flip_image = False
     show_face = False
 
     # List of all availabe models
@@ -77,7 +82,7 @@ def main_program(
 
     while True:
         # Capture face using cv2 face recognition
-        _, frame = camera.read()
+        _, frame = from_phone_cam()
         if flip_image:
             frame = cv2.flip(frame, 1)
 
@@ -146,13 +151,11 @@ def main_program(
 
         cv2.imshow("Face Recognition", ui_base)
 
-    camera.release()
     cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
     main_program(
-        video_feed=1,
         zoom_depth=3,
         brightness_levels=3,
         threshold=0.3,
