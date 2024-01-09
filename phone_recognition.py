@@ -156,7 +156,7 @@ def main_program(zoom_depth=3, brightness_levels=3, threshold=0.2, verbose=0):
 
 if __name__ == "__main__":
     main_program(
-        zoom_depth=3,
+        zoom_depth=4,
         brightness_levels=3,
         threshold=0.3,
         verbose=0,

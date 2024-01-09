@@ -5,6 +5,7 @@ import numpy as np
 import cv2
 import json
 import math
+import matplotlib.pyplot as plt
 
 MatLike = NewType("MatLike", np.array)
 
@@ -153,7 +154,7 @@ class CNN_Model:
             self.name = model_info["name"]
             self.img_size = model_info["input_size"]
             self.img_color = model_info["color_mode"]
-            self.labels = LABELS.copy()
+            self.labels = LABELS[:]
 
     def summary(self):
         """Return the summary of the model."""
@@ -182,7 +183,8 @@ class CNN_Model:
 
         # Perform prediction and calculate matching label and uncertainty
         predict_list = []
-        for img in img_batch:
+        plt.figure(figsize=(brightness_levels, zoom_depth))
+        for i, img in enumerate(img_batch):
             prediction = self.model.predict(img, verbose=verbose)
             arg_max = np.argmax(prediction)
 
@@ -194,6 +196,11 @@ class CNN_Model:
                 label: str = LABELS[arg_max]
             print(label, uncertainty)
             predict_list.append((label, uncertainty))
+
+            plt.subplot(zoom_depth, brightness_levels, i + 1)
+            plt.imshow(img[0])
+            plt.axis("off")
+        plt.savefig("aug_input_images")
         return min(predict_list, key=lambda x: x[1])
 
 
@@ -202,7 +209,7 @@ if __name__ == "__main__":
     model.summary()
     print("Number of labels:", len(LABELS))
     test_image = cv2.imread("./Assets/Faces/Thang Doi.jpg")
-    prediction = model.predict(test_image, 3, 3)
+    prediction = model.predict(test_image, 5, 3)
     print(">>>", *prediction)
     while True:
         test_image = cv2.resize(test_image, (224, 224))
